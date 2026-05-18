@@ -147,7 +147,7 @@
       position: relative;
       min-height: 100vh;
       display: flex;
-      align-items: flex-end;
+      align-items: center;
       overflow: hidden;
     }
     .hero-bg {
@@ -158,20 +158,20 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center top;
+      object-position: right center;
     }
     .hero-bg::after {
       content: '';
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(to right, rgba(10,45,48,0.85) 0%, rgba(10,45,48,0.55) 40%, rgba(10,45,48,0.05) 72%),
-        linear-gradient(to top, rgba(10,45,48,0.65) 0%, transparent 45%);
+        linear-gradient(to right, rgba(10,45,48,0.94) 0%, rgba(10,45,48,0.78) 32%, rgba(10,45,48,0.18) 58%, rgba(10,45,48,0.0) 72%),
+        linear-gradient(to top, rgba(10,45,48,0.72) 0%, transparent 42%);
     }
     .hero-content {
       position: relative;
       z-index: 2;
-      padding: 0 72px 80px;
+      padding: 120px 72px 80px;
       max-width: 680px;
     }
     .hero-eyebrow {
@@ -825,7 +825,7 @@
       .nav-links { display: none; }
       .hamburger { display: flex; }
 
-      .hero-content { padding: 0 28px 64px; }
+      .hero-content { padding: 100px 28px 64px; }
       .identity-strip { grid-template-columns: repeat(2, 1fr); }
       .identity-cell { border-bottom: 1px solid rgba(255,255,255,0.12); }
 
@@ -937,7 +937,7 @@
 <!-- HERO -->
 <section class="hero" id="top" aria-labelledby="hero-h1">
   <div class="hero-bg" aria-hidden="true">
-    <img src="./patrice-portrait.png" alt="" />
+    <img src="./Patrice-beach-hero.png" alt="" />
   </div>
   <div class="hero-content">
     <span class="hero-eyebrow">Life Coach · Author · Speaker</span>
@@ -1108,14 +1108,21 @@
         <div class="contact-icon">✉</div>
         <div>
           <span class="ci-label">Email</span>
-          <a class="ci-val" href="mailto:hello@patricebobomiles.com">hello@patricebobomiles.com</a>
+          <a class="ci-val" href="mailto:patricebobomiles@gmail.com">patricebobomiles@gmail.com</a>
         </div>
       </div>
       <div class="contact-info-row">
-        <div class="contact-icon">📞</div>
+        <div class="contact-icon">📷</div>
         <div>
-          <span class="ci-label">Phone</span>
-          <span class="ci-val">(843) 555-0147</span>
+          <span class="ci-label">Miles Ahead Life Coaching</span>
+          <a class="ci-val" href="https://www.instagram.com/milesaheadlifecoaching" target="_blank" rel="noopener">@milesaheadlifecoaching</a>
+        </div>
+      </div>
+      <div class="contact-info-row">
+        <div class="contact-icon">📷</div>
+        <div>
+          <span class="ci-label">Personal</span>
+          <a class="ci-val" href="https://www.instagram.com/pbobomiles" target="_blank" rel="noopener">@pbobomiles</a>
         </div>
       </div>
       <div class="contact-info-row">
@@ -1126,10 +1133,13 @@
         </div>
       </div>
     </div>
-    <a class="btn btn-primary" href="tel:8435550147" style="margin-top:32px; display:inline-flex;">Book a Discovery Call</a>
+    <a class="btn btn-primary" href="mailto:patricebobomiles@gmail.com" style="margin-top:32px; display:inline-flex;">Send Patrice a Message</a>
   </div>
   <div class="contact-form-wrap">
-    <form class="contact-form" id="contact-form" novalidate>
+    <form class="contact-form" id="contact-form" action="https://formsubmit.co/patricebobomiles@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="New inquiry — Miles Ahead Life Coaching" />
+      <input type="hidden" name="_next" value="https://gorgo-company.github.io/PBM/#contact" />
+      <input type="hidden" name="_captcha" value="false" />
       <div class="field-row">
         <div class="field">
           <label for="f-name">Name</label>
@@ -1171,7 +1181,7 @@
     <li><a href="#speaking">Speaking</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <p class="footer-copy">© 2025 Patrice Bobo-Miles. All rights reserved.</p>
+  <p class="footer-copy">© 2026 Patrice Bobo-Miles · Miles Ahead Life Coaching. All rights reserved.</p>
 </footer>
 
 <script>
@@ -1205,13 +1215,10 @@
     });
   });
 
-  // Contact form
-  document.getElementById('contact-form').addEventListener('submit', e => {
-    e.preventDefault();
-    const name = e.target.name.value || 'friend';
-    const note = document.getElementById('form-note');
-    note.textContent = `Thank you, ${name}. Your message is ready to send once the form service is connected.`;
-    e.target.reset();
+  // Contact form — FormSubmit handles delivery; just show a sending state
+  document.getElementById('contact-form').addEventListener('submit', function(e) {
+    const btn = this.querySelector('button[type=submit]');
+    if (btn) { btn.textContent = 'Sending…'; btn.disabled = true; }
   });
 </script>
 </body>
