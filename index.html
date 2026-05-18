@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Patrice Bobo-Miles | Life Coach, Author & Speaker</title>
-  <meta name="description" content="Patrice Bobo-Miles is a life coach, author, speaker, and Emotional Money Management mentor helping women rebuild with grace, clarity, and purpose." />
+  <meta name="description" content="Patrice Bobo-Miles is a life coach, author, speaker, and mentor helping women rebuild with grace, clarity, and purpose." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -193,11 +193,21 @@
       margin-bottom: 24px;
       letter-spacing: -0.01em;
     }
-    .hero-divider {
-      width: 52px;
-      height: 2px;
-      background: var(--gold);
+    .hero-ornament {
+      display: flex;
+      align-items: center;
+      gap: 14px;
       margin-bottom: 24px;
+      color: var(--gold);
+      font-size: 16px;
+      line-height: 1;
+    }
+    .hero-ornament::before,
+    .hero-ornament::after {
+      content: '';
+      flex: 0 0 44px;
+      height: 1.5px;
+      background: var(--gold);
     }
     .hero p {
       font-family: var(--sans);
@@ -588,12 +598,15 @@
     .service-item-tag {
       font-size: 10px;
       font-weight: 700;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.13em;
       text-transform: uppercase;
       color: #a9e8ee;
-      white-space: nowrap;
+      white-space: normal;
       flex-shrink: 0;
-      width: 130px;
+      width: 152px;
+      min-width: 152px;
+      line-height: 1.5;
+      align-self: center;
     }
     .service-item h4 {
       font-family: var(--serif);
@@ -819,6 +832,185 @@
       color: rgba(255,255,255,0.35);
     }
 
+    /* ── SCROLL OFFSET (fixed nav) ── */
+    [id] { scroll-margin-top: 80px; }
+
+    /* ── SERVICE EXPAND SECTIONS ── */
+    .service-expand {
+      padding: 88px 72px;
+      background: var(--white);
+    }
+    .service-expand.bg-alt {
+      background: var(--off-white);
+    }
+    .service-expand-header {
+      margin-bottom: 52px;
+      max-width: 760px;
+    }
+    .service-expand-header h2 {
+      font-family: var(--serif);
+      font-size: clamp(34px, 3.8vw, 54px);
+      font-weight: 500;
+      line-height: 1.06;
+      color: var(--teal);
+      margin-top: 16px;
+    }
+    .expand-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border: 1px solid var(--line);
+      margin-bottom: 48px;
+    }
+    .expand-card {
+      padding: 44px 36px;
+      border-right: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .expand-card:last-child { border-right: none; }
+    .expand-card:nth-child(even) { background: var(--sand); }
+    .expand-num {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 1.5px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: var(--gold);
+    }
+    .expand-card h3 {
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--teal);
+    }
+    .expand-card p {
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 1.72;
+      color: var(--muted);
+      flex: 1;
+    }
+    .expand-inline-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-top: auto;
+    }
+    .btn-expand {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 16px 40px;
+      border-radius: 2px;
+      background: var(--teal);
+      color: var(--white);
+      box-shadow: 0 8px 24px rgba(13,74,78,0.2);
+      transition: all 180ms ease;
+    }
+    .btn-expand:hover { background: var(--teal-mid); transform: translateY(-2px); }
+
+    /* ── FOOTER (updated) ── */
+    .footer {
+      background: var(--ink);
+      padding: 60px 72px 36px;
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 60px;
+      margin-bottom: 44px;
+      padding-bottom: 44px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .footer-brand {
+      font-family: var(--serif);
+      font-size: 28px;
+      font-weight: 500;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    .footer-tagline {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.38);
+      margin-bottom: 28px;
+    }
+    .footer-contact-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .footer-ci {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.62);
+      transition: color 180ms;
+    }
+    a.footer-ci:hover { color: var(--gold-light); }
+    .footer-ci-icon {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.07);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      flex-shrink: 0;
+    }
+    .footer-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 28px;
+    }
+    .footer-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+    .footer-links a {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      transition: color 180ms;
+    }
+    .footer-links a:hover { color: var(--gold-light); }
+    .footer-bottom {
+      text-align: center;
+    }
+    .footer-copy {
+      font-size: 13px;
+      color: rgba(255,255,255,0.28);
+    }
+
     /* ── MOBILE ── */
     @media (max-width: 1060px) {
       .nav { padding: 0 28px; }
@@ -862,6 +1054,15 @@
 
       .quote-section { flex-direction: column; gap: 24px; padding: 64px 28px; }
       .quote-mark { font-size: 72px; }
+
+      .service-expand { padding: 64px 28px; }
+      .expand-grid { grid-template-columns: 1fr; }
+      .expand-card { border-right: none; border-bottom: 1px solid var(--line); }
+      .expand-card:last-child { border-bottom: none; }
+
+      .footer-inner { flex-direction: column; gap: 36px; }
+      .footer-right { align-items: flex-start; }
+      .footer-links { flex-wrap: wrap; gap: 16px; }
     }
 
     @media (max-width: 640px) {
@@ -942,7 +1143,7 @@
   <div class="hero-content">
     <span class="hero-eyebrow">Life Coach · Author · Speaker</span>
     <h1 id="hero-h1">Patrice<br>Bobo-Miles</h1>
-    <div class="hero-divider"></div>
+    <div class="hero-ornament" aria-hidden="true">♥</div>
     <p>Life coach, speaker, author, and guide for women rebuilding with grace, money wisdom, and purpose.</p>
     <div class="hero-buttons">
       <a class="btn btn-primary" href="#contact">Work with Patrice</a>
@@ -966,7 +1167,7 @@
     <p>I speak truth with grace and leave people ready to grow.</p>
   </div>
   <div class="identity-cell">
-    <h3>Emotional Money Mentor</h3>
+    <h3>Mentor</h3>
     <p>I teach women how to heal their money story and build lasting freedom.</p>
   </div>
 </section>
@@ -1020,32 +1221,113 @@
     </div>
     <p>Coaching is the center, but the work moves through money, voice, healing, writing, and practical life design.</p>
   </div>
-  <div class="helps-grid" id="coaching">
+  <div class="helps-grid">
     <div class="help-card">
       <div class="help-icon">👥</div>
       <h3>1:1 Coaching</h3>
       <p>Personalized coaching for women ready to heal, reset, and build a life that feels good on the inside and looks good on the outside.</p>
-      <a href="#contact">Learn more →</a>
+      <a href="#coaching">Learn more →</a>
     </div>
-    <div class="help-card" id="writing">
+    <div class="help-card">
       <div class="help-icon">📖</div>
       <h3>Books &amp; Writing</h3>
       <p>From powerful books to guided journals, Patrice's words will meet you where you are and move you forward.</p>
-      <a href="#contact">Explore →</a>
+      <a href="#writing">Explore →</a>
     </div>
-    <div class="help-card" id="speaking">
+    <div class="help-card">
       <div class="help-icon">🎤</div>
       <h3>Speaking</h3>
       <p>Engaging, inspiring, and real. Patrice speaks on life, money, healing, and purpose to audiences that want more.</p>
-      <a href="#contact">Book Patrice →</a>
+      <a href="#speaking">Book Patrice →</a>
     </div>
-    <div class="help-card" id="courses">
+    <div class="help-card">
       <div class="help-icon">🎓</div>
       <h3>Courses</h3>
       <p>On-demand courses that give you the tools and strategies to take control of your money, mindset, and future.</p>
-      <a href="#contact">View courses →</a>
+      <a href="#courses">View courses →</a>
     </div>
   </div>
+</section>
+
+<!-- COACHING DETAIL -->
+<section id="coaching" class="service-expand" aria-labelledby="coaching-h2">
+  <div class="service-expand-header">
+    <span class="section-label">1:1 Coaching</span>
+    <h2 id="coaching-h2">Personalized. Private. Built for exactly where you are right now.</h2>
+  </div>
+  <div class="expand-grid">
+    <div class="expand-card">
+      <div class="expand-num">01</div>
+      <h3>What to Expect</h3>
+      <p>Private sessions built around your specific season — whether you're navigating identity shifts, money wounds, relationship dynamics, menopause, grief, or the quiet weight of outgrowing a version of yourself you once loved. No scripts. No templates. Just honest work.</p>
+    </div>
+    <div class="expand-card">
+      <div class="expand-num">02</div>
+      <h3>Who It's For</h3>
+      <p>Women in their 40s, 50s, and beyond who are done waiting for permission. Women who are high-functioning on the outside and quietly exhausted on the inside. Women ready for a coach who has actually lived the terrain she teaches.</p>
+    </div>
+    <div class="expand-card">
+      <div class="expand-num">03</div>
+      <h3>How to Begin</h3>
+      <p>Start with a no-pressure discovery call. No pitch, no obligation. Patrice reads a room quickly — you'll know within the first conversation whether this is the work and the woman for this season of your life.</p>
+    </div>
+  </div>
+  <a href="#contact" class="btn-expand">Book a Discovery Call</a>
+</section>
+
+<!-- WRITING DETAIL -->
+<section id="writing" class="service-expand bg-alt" aria-labelledby="writing-h2">
+  <div class="service-expand-header">
+    <span class="section-label">Books &amp; Writing</span>
+    <h2 id="writing-h2">Words that meet you where you are — and move you forward.</h2>
+  </div>
+  <div class="expand-grid">
+    <div class="expand-card">
+      <div class="expand-num">01</div>
+      <h3>Her Titanium Balls</h3>
+      <p>Patrice's debut book — written during recovery from surgery and finished through sheer will. A raw, real, and powerful story of resilience, reinvention, and the unstoppable force of a woman who refuses to stay down. For every woman who's been told she's too much and proved them right.</p>
+      <a href="#contact" class="expand-inline-link">Get the book →</a>
+    </div>
+    <div class="expand-card">
+      <div class="expand-num">02</div>
+      <h3>Guided Journals</h3>
+      <p>Purpose-built prompts for women working through their money story, their next chapter, and their most honest relationship with themselves. These are not journaling exercises. They are excavation tools — for the woman who is finally ready to tell herself the truth.</p>
+      <a href="#contact" class="expand-inline-link">Learn more →</a>
+    </div>
+    <div class="expand-card">
+      <div class="expand-num">03</div>
+      <h3>Media &amp; Collaboration</h3>
+      <p>Interviews, podcast appearances, forewords, and writing partnerships for the right projects. If your audience is women rebuilding with grace and intention — and you need a voice that resonates with hard-earned authority — let's talk.</p>
+      <a href="#contact" class="expand-inline-link">Reach out →</a>
+    </div>
+  </div>
+  <a href="#contact" class="btn-expand">Connect About Books</a>
+</section>
+
+<!-- SPEAKING DETAIL -->
+<section id="speaking" class="service-expand" aria-labelledby="speaking-h2">
+  <div class="service-expand-header">
+    <span class="section-label">Speaking</span>
+    <h2 id="speaking-h2">The kind of keynote people still quote on the drive home.</h2>
+  </div>
+  <div class="expand-grid">
+    <div class="expand-card">
+      <div class="expand-num">01</div>
+      <h3>Signature Topics</h3>
+      <p>Emotional money and financial healing · Menopause, identity, and the power of the 40s and 50s · Rebuilding after loss, divorce, or the career that stopped fitting · The grown woman's voice — how to use it without shrinking the room.</p>
+    </div>
+    <div class="expand-card">
+      <div class="expand-num">02</div>
+      <h3>Event Formats</h3>
+      <p>Corporate women's conferences · Faith-based retreats · Live and virtual workshops · Keynotes, panels, and expert interviews · Intimate mastermind days for women in leadership. Patrice meets every room where it is and moves it to where it needs to be.</p>
+    </div>
+    <div class="expand-card">
+      <div class="expand-num">03</div>
+      <h3>Book Patrice</h3>
+      <p>Reach out with your event details — date, expected audience, format, and your vision for the room. Patrice responds personally within 48 hours. Every inquiry is treated as the beginning of a real conversation, not a sales funnel.</p>
+    </div>
+  </div>
+  <a href="#contact" class="btn-expand">Inquire About Booking</a>
 </section>
 
 <!-- QUOTE -->
@@ -1063,7 +1345,7 @@
 </section>
 
 <!-- SERVICES / COURSES -->
-<section class="services-section" aria-labelledby="services-h2">
+<section id="courses" class="services-section" aria-labelledby="services-h2">
   <div class="services-left">
     <span class="section-label" style="color:rgba(255,255,255,0.5)">Courses with Grown-Woman Depth</span>
     <h2 id="services-h2">Teachings built from a lifetime of real skill.</h2>
@@ -1173,15 +1455,37 @@
 
 <!-- FOOTER -->
 <footer class="footer">
-  <div class="footer-brand">Patrice Bobo-Miles</div>
-  <ul class="footer-links">
-    <li><a href="#about">Bio</a></li>
-    <li><a href="#coaching">Coaching</a></li>
-    <li><a href="#writing">Writing</a></li>
-    <li><a href="#speaking">Speaking</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <p class="footer-copy">© 2026 Patrice Bobo-Miles · Miles Ahead Life Coaching. All rights reserved.</p>
+  <div class="footer-inner">
+    <div class="footer-left">
+      <div class="footer-brand">Patrice Bobo-Miles</div>
+      <p class="footer-tagline">Life Coach · Author · Speaker · Mentor</p>
+      <div class="footer-contact-list">
+        <a href="mailto:patricebobomiles@gmail.com" class="footer-ci">
+          <span class="footer-ci-icon">✉</span>patricebobomiles@gmail.com
+        </a>
+        <a href="https://www.instagram.com/milesaheadlifecoaching" target="_blank" rel="noopener" class="footer-ci">
+          <span class="footer-ci-icon">◈</span>@milesaheadlifecoaching
+        </a>
+        <span class="footer-ci">
+          <span class="footer-ci-icon">◎</span>Florida
+        </span>
+      </div>
+    </div>
+    <div class="footer-right">
+      <a href="#contact" class="btn btn-primary" style="white-space:nowrap;">Book a Discovery Call</a>
+      <ul class="footer-links">
+        <li><a href="#about">Bio</a></li>
+        <li><a href="#coaching">Coaching</a></li>
+        <li><a href="#writing">Writing</a></li>
+        <li><a href="#speaking">Speaking</a></li>
+        <li><a href="#courses">Courses</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 Patrice Bobo-Miles · Miles Ahead Life Coaching. All rights reserved.</p>
+  </div>
 </footer>
 
 <script>
